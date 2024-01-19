@@ -7,13 +7,27 @@
   <style>
     body {
       font-family: 'HarryPotter', 'Arial', sans-serif;
-      background-color: #1d1d1d; /* Hogwarts dark theme */
+      background: linear-gradient(45deg, #551a8b, #ffc107); /* Purple and yellow gradient background */
+      background-size: 400% 400%;
+      animation: gradientChange 15s infinite;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       color: #fff;
+    }
+
+    @keyframes gradientChange {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     #sorting-hat {
@@ -30,7 +44,7 @@
 
     button {
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #551a8b; /* Purple button */
       color: white;
       border: none;
       cursor: pointer;
@@ -41,6 +55,22 @@
     #result {
       margin-top: 20px;
       font-size: 20px;
+    }
+
+    #result h2 {
+      color: #ff0000; /* Gryffindor red */
+    }
+
+    #result h2:contains("Hufflepuff") {
+      color: #ffd700; /* Hufflepuff yellow */
+    }
+
+    #result h2:contains("Ravenclaw") {
+      color: #0000ff; /* Ravenclaw blue */
+    }
+
+    #result h2:contains("Slytherin") {
+      color: #00ff00; /* Slytherin green */
     }
   </style>
 </head>
