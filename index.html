@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogwarts Sorting Hat</title>
+  <style>
+    body {
+      font-family: 'HarryPotter', 'Arial', sans-serif;
+      background-color: #1d1d1d; /* Hogwarts dark theme */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+
+    #sorting-hat {
+      background-color: #333; /* Dark gray container */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffc107; /* Hogwarts yellow */
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="sorting-hat">
+  <h1>The Hogwarts Sorting Hat</h1>
+  <button onclick="sort()">Sort me into a house!</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  function sort() {
+    const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+    const randomHouse = houses[Math.floor(Math.random() * houses.length)];
+
+    const resultContainer = document.getElementById('result');
+    resultContainer.innerHTML = `
+      <p>The Sorting Hat has spoken...</p>
+      <h2>${randomHouse}!</h2>
+    `;
+  }
+</script>
+
+</body>
+</html>
